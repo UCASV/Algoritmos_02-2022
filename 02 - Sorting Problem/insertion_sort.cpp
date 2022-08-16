@@ -10,10 +10,10 @@ void show_array(int* A, int n){
 }
 
 int main(){
-    int len = 8, key, i;
-    int A[len] = {4,3,2,10,12,1,5,6};
+    int n = 8, key, i;
+    int A[n] = {4,3,2,10,12,1,5,6};
 
-    for(int j = 1; j < len; j++){
+    for(int j = 1; j < n; j++){
         key = A[j];
 
         //algún comentario
@@ -27,7 +27,7 @@ int main(){
         A[i+1] = key;
     }
 
-    show_array(A, len);
+    show_array(A, n);
 
     return 0;
 }

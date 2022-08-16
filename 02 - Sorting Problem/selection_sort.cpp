@@ -10,13 +10,13 @@ void show_array(int* A, int n){
 }
 
 int main(){
-    int len = 8, min, temp;
-    int A[len] = {4,3,2,10,12,1,5,6};
+    int n = 8, min, temp;
+    int A[n] = {4,3,2,10,12,1,5,6};
 
-    for(int i = 0; i < len - 1; i++){
+    for(int i = 0; i < n - 1; i++){
         min = i;
 
-        for(int j = i+1; j < len; j++)
+        for(int j = i+1; j < n; j++)
             if(A[j] < A[min])
                 min = j;
 
@@ -27,7 +27,7 @@ int main(){
         }
     }
 
-    show_array(A, len);
+    show_array(A, n);
 
     return 0;
 }
