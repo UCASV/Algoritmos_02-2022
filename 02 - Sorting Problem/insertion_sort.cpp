@@ -21,7 +21,7 @@ int main(){
 
         while( i > -1 && A[i] > key ){
             A[i+1] = A[i];
-            i = i - 1;
+            i--;
         }
 
         A[i+1] = key;
