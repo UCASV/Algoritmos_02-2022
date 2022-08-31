@@ -14,10 +14,10 @@ int main(){
     int A[n] = {4,3,2,10,12,1,5,6};
 
     for(int i = 0; i < n; i++)
-        for(int j = 0; j < n-i-1; j++)
-            if(A[j] > A[j+1]){
-                temp = A[j+1];
-                A[j+1] = A[j];
+        for(int j = n-1; j > i; j--)
+            if(A[j] < A[j-1]){
+                temp = A[j-1];
+                A[j-1] = A[j];
                 A[j] = temp;
             }
 
