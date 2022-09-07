@@ -13,7 +13,7 @@ int main(){
     int n = 8, temp;
     int A[n] = {4,3,2,10,12,1,5,6};
 
-    for(int i = 0; i < n; i++)
+    for(int i = 0; i < n-1; i++)
         for(int j = n-1; j > i; j--)
             if(A[j] < A[j-1]){
                 temp = A[j-1];
