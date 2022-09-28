@@ -11,14 +11,10 @@ void show_array(int* A, int n){
     cout << " ]\n";
 }
 
-void swap(int* A, int a, int b){
-    int temp = A[a];
-    A[a] = A[b];
-    A[b] = temp;
-}
-
-int parent(int i){
-    return floor( (i-1)/2 );
+void swap(int *A, int i, int j){
+    int temp = A[i];
+    A[i] = A[j];
+    A[j] = temp;
 }
 
 int left(int i){
@@ -29,15 +25,15 @@ int right(int i){
     return 2*i + 2;
 }
 
-void max_heapify(int* A, int i, int heap_size){
-    int largest, temp;
+void max_heapify(int *A, int i, int heap_size){
+    int largest;
     int l = left(i);
     int r = right(i);
-    if( l < heap_size && A[l] > A[i] )
+    if( l < heap_size && A[ l ] > A[ i ] )
         largest = l;
     else
         largest = i;
-    if( r < heap_size && A[r] > A[largest] )
+    if( r < heap_size && A[ r ] > A[ largest ] )
         largest = r;
     if( largest != i ){
         swap(A, i, largest);
@@ -46,11 +42,12 @@ void max_heapify(int* A, int i, int heap_size){
 }
 
 void build_max_heap(int* A, int heap_size){
+    //int heap_size = n;
     for(int i = floor(heap_size/2)-1; i >= 0; i--)
         max_heapify(A, i, heap_size);
 }
 
-void heapsort(int* A, int n){
+void heapsort(int *A, int n){
     int heap_size = n;
     build_max_heap(A, heap_size);
     for(int i = n-1; i > 0; i--){
