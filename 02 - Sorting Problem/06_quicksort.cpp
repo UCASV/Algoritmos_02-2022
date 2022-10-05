@@ -10,22 +10,24 @@ void show_array(int* A, int n){
 }
 
 void swap(int* A, int a, int b){
-    int temp = A[a];
-    A[a] = A[b];
-    A[b] = temp;
+    if( a != b ){
+        int temp = A[a];
+        A[a] = A[b];
+        A[b] = temp;
+    }
 }
 
 int partition(int* A, int p, int r){
-    int x = A[r];
-    int i = p - 1;
+    int pivot = A[r];
+    int tracker = p - 1;
     for(int j = p; j < r; j++)
-        if( A[j] <= x){
-            i++;
-            swap(A, i, j);
+        if( A[j] <= pivot ){
+            tracker++;
+            swap(A, j, tracker);
         }
-    i++;
-    swap(A, i, r);
-    return i;
+    tracker++;
+    swap(A, r, tracker);
+    return tracker;
 }
 
 void quicksort(int* A, int p, int r){

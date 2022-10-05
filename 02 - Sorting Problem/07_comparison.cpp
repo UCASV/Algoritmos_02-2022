@@ -17,7 +17,7 @@ int main(int argc, char* argv[]){
     int n = atoi(argv[1]);
     int A[n], B[n], C[n], D[n], E[n], F[n];
 
-    srand (time(NULL));
+    srand(time(NULL));
     for(int i = 0; i < n; i++){
         A[i] = rand() % 1000 + 1;
         F[i] = E[i] = D[i] = C[i] = B[i] = A[i];
