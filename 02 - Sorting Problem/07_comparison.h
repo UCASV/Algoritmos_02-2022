@@ -1,12 +1,18 @@
 #include <climits>
 #include <math.h>
 
+/* Función que ejecuta el intercambio de datos
+   entre dos posiciones de un Arreglo.         */
 void swap(int* A, int a, int b){
-    int temp = A[a];
-    A[a] = A[b];
-    A[b] = temp;
+    if( a != b ){
+        int temp = A[a];
+        A[a] = A[b];
+        A[b] = temp;
+    }
 }
 
+/* Insertion Sort Algorithm */
+/****************************************/
 void insertion_sort(int* A, int n){
     int key, i;
     for(int j = 1; j < n; j++){
@@ -23,6 +29,8 @@ void insertion_sort(int* A, int n){
     }
 }
 
+/* Selection Sort Algorithm */
+/************************************/
 void selection_sort(int* A, int n){
     int min;
     for( int i = 0; i < n-1; i++ ){
@@ -39,6 +47,8 @@ void selection_sort(int* A, int n){
     }
 }
 
+/* Bubble Sort Algorithm */
+/*********************************/
 void bubble_sort(int* A, int n){
     for(int i = 0; i < n-1; i++)
         for(int j = n-1; j > i; j--)
@@ -46,6 +56,8 @@ void bubble_sort(int* A, int n){
                 swap(A, j, j-1);
 }
 
+/* Merge Sort Algorithm */
+/**********************************/
 void merge(int* A, int p, int q, int r){
     int i, j;
     int n1 = q - p + 1;
@@ -77,6 +89,8 @@ void merge_sort(int* A, int p, int r){
     }
 }
 
+/* Heapsort Algorithm */
+/********************************/
 int parent(int i){
     return floor( (i-1)/2 );
 }
@@ -120,6 +134,8 @@ void heapsort(int* A, int n){
     }
 }
 
+/* Quicksort Algorithm */
+/********************************/
 int partition(int* A, int p, int r){
     int x = A[r];
     int i = p - 1;
