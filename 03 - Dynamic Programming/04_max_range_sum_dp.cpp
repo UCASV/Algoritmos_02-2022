@@ -8,7 +8,7 @@ int max_1d_range_sum(int* A, int n){
     M[0] = 0;
     for(int i = 1; i <= n; i++){
         S += A[i-1];
-        S = max(S, 0);
+        S = max(S, A[i-1]);
         M[i] = max(S, M[i-1]);
     }
 
