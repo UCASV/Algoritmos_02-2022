@@ -14,8 +14,8 @@ int knapsack(int K, int* V, int* W, int n){
     for(int i = 1; i <= n; i++)
         for(int j = 1; j <= K; j++)
             if( j >= W[i-1] )
-                M[i][j] = max( V[i-1] + M[i-1][j-W[i-1]], M[i-1][j]);
-            else M[i][j] = M[i][j-1];
+                 M[i][j] = max( V[i-1] + M[i-1][j-W[i-1]], M[i-1][j]);
+            else M[i][j] = M[i-1][j];
 
     return M[n][K];
 }
